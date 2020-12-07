@@ -49,7 +49,7 @@ import androidx.annotation.StyleRes;
  *
  * @see CodeScanner
  */
-public final class CodeScannerView extends ViewGroup {
+public class CodeScannerView extends ViewGroup {
     private static final boolean DEFAULT_AUTO_FOCUS_BUTTON_VISIBLE = true;
     private static final boolean DEFAULT_FLASH_BUTTON_VISIBLE = true;
     private static final int DEFAULT_AUTO_FOCUS_BUTTON_VISIBILITY = VISIBLE;
@@ -69,11 +69,11 @@ public final class CodeScannerView extends ViewGroup {
     private SurfaceView mPreviewView;
     private ViewFinderView mViewFinderView;
     private ImageView mAutoFocusButton;
-    private ImageView mFlashButton;
+    protected ImageView mFlashButton;
     private Point mPreviewSize;
     private SizeListener mSizeListener;
     private CodeScanner mCodeScanner;
-    private int mButtonSize;
+    protected int mButtonSize;
     private int mAutoFocusButtonColor;
     private int mFlashButtonColor;
     private int mFocusAreaSize;
@@ -548,7 +548,7 @@ public final class CodeScannerView extends ViewGroup {
                 R.drawable.ic_code_scanner_flash_off);
     }
 
-    private void performLayout(final int width, final int height) {
+    protected void performLayout(final int width, final int height) {
         final Point previewSize = mPreviewSize;
         if (previewSize == null) {
             mPreviewView.layout(0, 0, width, height);
